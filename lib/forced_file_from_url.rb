@@ -21,4 +21,11 @@ module ForcedFileFromUrl
     file.rewind
     file
   end
+
+  # Takes a paperclip attachment, downloads the file to tmp, and returns a file handle
+  def file_from_paperclip_attachment(attachment, style: :original)
+    url = Rails.root.join("/tmp/#{attachment.instance_read :file_name}").to_s
+    attachment.copy_to_local_file style, url
+    File.open url, ?r
+  end
 end
