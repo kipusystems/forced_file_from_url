@@ -6,11 +6,11 @@ require 'forced_file_from_url/version'
 Gem::Specification.new do |spec|
   spec.name          = "forced_file_from_url"
   spec.version       = ForcedFileFromUrl::VERSION
-  spec.authors       = ["Diego Salazar"]
-  spec.email         = ["diego@greyrobot.com"]
+  spec.authors       = ["Sampson Crowley"]
+  spec.email         = ["sampson.crowley@kipuhealth.com"]
   spec.summary       = %q{Tiny hack to convert StringIO objects into Tempfile when using OpenURI to open files less than 10kb.}
   spec.description   = %q{Tiny hack to convert StringIO objects into Tempfile when using OpenURI to open files less than 10kb.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/kipuhealth/forced_file_from_url.git"
   spec.license       = "MIT"
 
   if spec.respond_to?(:metadata)
