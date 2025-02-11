@@ -12,8 +12,11 @@ module ForcedFileFromUrl
     data = URI.parse(url).open
     return data if data.is_a? Tempfile
 
-    extname = File.extname url
-    basename = File.basename url, extname
+    uri = URI.parse(url)
+    path = uri.path
+    extname = File.extname(path)
+    basename = File.basename(path, extname)
+    basename = 'downloaded_file' if basename.empty?
 
     file = Tempfile.new [basename, extname]
     file.binmode
