@@ -9,7 +9,7 @@ module ForcedFileFromUrl
   # in StringIO objects but rather File and Tempfile objects. This method writes the data 
   # to a Tempfile when the data is a StringIO.
   def forced_file_from_url(url)
-    data = open URI.parse(url)
+    data = URI.parse(url).open
     return data if data.is_a? Tempfile
 
     extname = File.extname url
