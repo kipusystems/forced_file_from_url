@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+require "forced_file_from_url/cli"
+exit ForcedFileFromUrl::Cli.run(ARGV)

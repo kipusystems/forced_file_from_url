@@ -28,6 +28,16 @@ Or install it yourself as:
 
 Include `ForcedFileFromUrl` in your code and use `forced_file_from_url(url)`. This method will always return a Tempfile.
 
+## Command line
+
+```
+forced_file_from_url [--json] [-o PATH] URL
+```
+
+The command downloads `URL` and prints the destination path plus one newline. That text format is the default and it does not grow. Pass `--json` for one compact JSON object on stdout, including on failure. Pass `-o PATH` to write that path and print `PATH` unchanged.
+
+Verify both modes with `script/verify.sh`.
+
 ## Contributing
 
 1. Fork it ( https://github.com/DiegoSalazar/forced_file_from_url/fork )
